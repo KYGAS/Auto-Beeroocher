@@ -45,3 +45,32 @@ Commands:
   ->blank => current delay
   ->"delay {Value}" => set brooch delay to {Value}
 
+{Value} IS JUST A NUMBER WITHOUT BRACKETS
+
+Supported abilities:
+// Deadly Gamble
+// Adrenaline Rush
+// In Cold Blood
+// Unleash
+// Mana Boost
+// Windsong
+// Edict of Judgement
+// Thrall of Wrath
+// Shadow Reaping
+// Bombardment
+// Modular Weapon System
+// Rythmic Blows
+// Harmony
+// Godsfall
+// Ragnarok
+
+
+****************
+*******************************
+** Credits:   *****************
+** Blasting Penis in the sky **
+** Brawndria  *****************
+** Ilya       *****************
+** Kygas      **
+****************
+****************
