@@ -5,7 +5,7 @@
     "description": "Auto use brooch during chosen actives.",
     "options": {
         "niceName": "Auto Beeroocher",
-        "guiName": "Auto Beerocher",
+        "guiName": "Auto Beerocher"
     },
     "version": "1.0",
     "servers": ["https://raw.githubusercontent.com/KYGAS/Auto-Beeroocher/master"],
