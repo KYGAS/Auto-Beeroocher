@@ -8,6 +8,6 @@
         "guiName": "Auto Beerocher",
     },
     "version": "1.0",
-    "servers": ["https://raw.githubusercontent.com/caali-hackerman/data-logger/master/update/CaaliLogger/"],
+    "servers": ["https://raw.githubusercontent.com/KYGAS/Auto-Beeroocher/master"],
     "conflicts": ["auto-beer-brooch","auto-beer","auto-brooch"]
 }
