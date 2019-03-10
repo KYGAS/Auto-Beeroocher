@@ -1,0 +1,28 @@
+beer:
+	-Turn off/on
+	-Default: ON
+
+lein:
+	-current delay on beer
+
+
+lein delay {number}:
+	-new delay on beer in miliseconds
+
+brooch:
+	-current delay on brooch
+
+brooch delay {number}:
+	-new delay on brooch in miliseconds
+
+{number} IS JUST A NUMBER WITHOUT BRACKETS
+
+****************
+*******************************
+** Credits:   *****************
+** Blasting Penis in the sky **
+** Brawndria  *****************
+** Ilya       *****************
+** Kygas      **
+****************
+****************

@@ -1,0 +1,13 @@
+{
+    "disableAutoUpdate": false,
+    "name": "Auto Lein's and Brooch",
+    "author": "KYGAS/others",
+    "description": "Auto use brooch during chosen actives.",
+    "options": {
+        "niceName": "Auto Beeroocher",
+        "guiName": "Auto Beerocher",
+    },
+    "version": "1.0",
+    "servers": ["https://raw.githubusercontent.com/caali-hackerman/data-logger/master/update/CaaliLogger/"],
+    "conflicts": ["auto-beer-brooch","auto-beer","auto-brooch"]
+}
