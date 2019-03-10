@@ -1,6 +1,8 @@
 {
   "files": {
     "index.js": "e6a037417db0a62d0dd0e33b13b01ac9da90324be81014c3e86a96ffbf4c6c1e",
-    "skills.js": "c90362f1c201987c7975e1f4927f1c77a6ba6d9f3fe4d4a6af820c630f04e8a3",
+    "module.json": "ca2404a3878edcccd88d13c8987bb97a65d753f9b66e86c75cf1fa4b9573422b",
+    "README.md": "bf45b094f058eb23d724e88b3179c5d576e8069fd198755c71fc3195b44ea042",
+    "skills.js": "c90362f1c201987c7975e1f4927f1c77a6ba6d9f3fe4d4a6af820c630f04e8a3"
   }
 }
