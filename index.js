@@ -3,13 +3,7 @@
  * Configured by Ilya
  * Configured by Blasting Penis In The Sky
  * Configured by Brawndria
- */
- 
- /*
-   9.3.2019 Added call for TGS Inventory Submodule
-			Refactorized the code
-			One fuction to start all brooches
-			Added command for delay
+ * Configured by Kygas
  */
 
 var
