@@ -8,6 +8,6 @@
         "guiName": "Auto Beerocher"
     },
     "version": "1.0",
-    "servers": ["https://raw.githubusercontent.com/KYGAS/Auto-Beeroocher/master"],
+    "servers": ["https://raw.githubusercontent.com/KYGAS/Auto-Beeroocher/master/"],
     "conflicts": ["auto-beer-brooch","auto-beer","auto-brooch"]
 }
