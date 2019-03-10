@@ -3,6 +3,8 @@ Automatically uses beer and/or brooch when certain skills are activated.
 
 Use skill.js to choose which abilities will proc the brooch+beer call.
 
+# Skills
+
 Two ways to find information for the needed skill:
 
 First:
@@ -55,6 +57,7 @@ Second:
 
 -> In proxy console you will find information about the job/id.
 
+# Commands
 
 Commands:
 
@@ -76,6 +79,8 @@ Commands:
   
 
 {Value} IS JUST A NUMBER WITHOUT BRACKETS
+
+# Supported
 
 Supported abilities:
 
@@ -110,12 +115,11 @@ Supported abilities:
 // Ragnarok
 
 
+# Credits
 
 ****************
 
 *******************************
-
-** Credits:   *****************
 
 ** Blasting Penis in the sky **
 
