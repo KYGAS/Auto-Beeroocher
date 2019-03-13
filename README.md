@@ -84,17 +84,29 @@ Commands:
 
 First time you run the game, config.json will be genrated.
 (looks something like this, without comments)
+
 {
+
     "enabled": true, // default module is enabled 
+    
     "list": {
+    
         "0": {
+        
             "cdw": 3000 // beer delay
+            
         },
+        
         "1": {
+        
             "cdw": 500 // brooch delay
+            
         }
+        
     }
+    
 }
+
 
 After you start the game you can edit the delays ( See Command )
 Or, out of the game you can edit config file yourself.
