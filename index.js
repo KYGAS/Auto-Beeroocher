@@ -6,17 +6,18 @@
  * Configured by Kygas
  */
 
-var
-	LEIN_ID = 80081,  
-    LEIN_DELAY = 3000,                           // How much time in miliseconds should wait after buff (seconds * 1000)
-	BROOCH_DELAY = 1500;
-	
+const LEIN_ID = 80081;
+const fs = require('fs');
+const path = require('path');
 /**
  * DON'T CHANGE ANYTHING BELOW THIS LINE
  */
- 
+ module.exports = function AutoBroocher(dispatch) {
 const skills = require('./skills');
-module.exports = function AutoBroocher(dispatch) {
+let cdwn = getCDWs();
+
+var LEIN_DELAY = cdwn.list[0].cdw,                           // How much time in miliseconds should wait after buff (seconds * 1000)
+	BROOCH_DELAY = cdwn.list[1].cdw;
 	
     const command = dispatch.command;
     dispatch.game.initialize('inventory'); // call for Tera-Game-State Inventory Submodule
@@ -82,6 +83,18 @@ module.exports = function AutoBroocher(dispatch) {
         oW = event.w;
     });
 	
+	dispatch.hook('S_START_COOLTIME_ITEM', 1, event => {
+        if ( event.item == LEIN_ID && isCdDrink == false ) {
+            isCdDrink = true;
+            setTimeout(function () { isCdDrink = false; }, event.cooldown * 1000);
+        }
+		
+        if ( event.item == dispatch.game.inventory.slots[20].id && isCDBrooch == false ) {
+            isCDBrooch = true;
+            setTimeout(function () { isCDBrooch = false; }, event.cooldown * 1000);
+        }
+    });
+	
     dispatch.hook('C_START_SKILL', 7, { order: -10 }, (event) => {
         if (!enabled) return;
         let sInfo = getSkillInfo(event.skill.id); // returns struct with skill info 
@@ -102,28 +115,31 @@ module.exports = function AutoBroocher(dispatch) {
     });
 	
     function Brooch(bID) { // Brooch Item Data
+   	 if(!isCDBrooch)
+		 {
 			setTimeout(function () {
-				dispatch.toServer('C_USE_ITEM', 3, {
-					gameId: oCid,
-					id: bID.id,
-					dbid: bID.dbid,
-					target: 0,
-					amount: 1,
-					dest: {x: 0, y: 0, z: 0},
-					loc: {x: oX, y: oY, z: oZ},
-					w: oW,
-					unk1: 0,
-					unk2: 0,
-					unk3: 0,
-					unk4: 1
-				});
-				isCDBrooch = true;
-				setTimeout(function () { isCDBrooch = false; }, 180000);
+					dispatch.toServer('C_USE_ITEM', 3, {
+						gameId: oCid,
+						id: bID.id,
+						dbid: bID.dbid,
+						target: 0,
+						amount: 1,
+						dest: {x: 0, y: 0, z: 0},
+						loc: {x: oX, y: oY, z: oZ},
+						w: oW,
+						unk1: 0,
+						unk2: 0,
+						unk3: 0,
+						unk4: 1
+					});
+					isCDBrooch = true;
+					setTimeout(function () { isCDBrooch = false; }, 180000);
 			}, BROOCH_DELAY);
-    }
+		 }
+	}
 	
 	function beer() {
-		if (dispatch.game.inventory.getTotalAmountInBag(LEIN_ID) > 0){
+		if (dispatch.game.inventory.getTotalAmountInBag(LEIN_ID) > 0 && !isCdDrink ){
 			var pivo = dispatch.game.inventory.findInBag(LEIN_ID); // get Item Beer
 			setTimeout(function () {
 				dispatch.toServer('C_USE_ITEM', 3, {
@@ -163,5 +179,33 @@ module.exports = function AutoBroocher(dispatch) {
             console.log('(Auto Broocher) ' + msg);
         }
     }
+
+function jsonRequire(p) {//path|name
+		delete require.cache[require.resolve(p)];
+		return require(p);
+	}
+
+function getCDWs() {
+		let cdws = {};
+		try {
+			cdws = jsonRequire('./config.json');
+		} catch (e) {
+			cdws = {
+				enabled: true,
+				list: {
+					0: {
+						cdw: 3000 //lein delay
+					},
+					1: {
+						cdw: 500 //brooch delay
+						
+					}
+				}
+			}
+			jsonSave('config.json', cdws);
+		}
+		return cdws;
+	}
 	
+	function jsonSave(name, data) {fs.writeFile(path.join(__dirname, name), JSON.stringify(data, null, 4), err => {});}
 }
