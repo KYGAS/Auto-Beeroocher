@@ -22,7 +22,7 @@ var LEIN_DELAY = cdwn.list[0].cdw,                           // How much time in
     const command = dispatch.command;
     dispatch.game.initialize('inventory'); // call for Tera-Game-State Inventory Submodule
 	
-    let enabled = true,
+    let enabled = cdwn.enabled,
         oCid = null,
         oJob = null,
         oX = null,
