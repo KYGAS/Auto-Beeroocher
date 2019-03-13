@@ -6,13 +6,11 @@
  * Configured by Kygas
  */
 
+
 const LEIN_ID = 80081;
 const fs = require('fs');
 const path = require('path');
-/**
- * DON'T CHANGE ANYTHING BELOW THIS LINE
- */
- module.exports = function AutoBroocher(dispatch) {
+module.exports = function AutoBroocher(dispatch) {
 const skills = require('./skills');
 let cdwn = getCDWs();
 
