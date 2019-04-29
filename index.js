@@ -69,7 +69,7 @@ var LEIN_DELAY = cdwn.list[0].cdw,                           // How much time in
     	}
 	});
 	
-    dispatch.hook('S_LOGIN', 10, (event) => {
+    dispatch.hook('S_LOGIN', 13, (event) => {
         oCid = event.gameId;
         oJob = (event.templateId - 10101) % 100;
     });
