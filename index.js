@@ -87,7 +87,7 @@ var LEIN_DELAY = cdwn.list[0].cdw,                           // How much time in
             setTimeout(function () { isCdDrink = false; }, event.cooldown * 1000);
         }
 		
-        if ( event.item == (dispatch.game.inventory.slots[20]).id && isCDBrooch == false ) {
+        if ( event.item == (dispatch.game.inventory.equipment.slots[20]).id && isCDBrooch == false ) {
             isCDBrooch = true;
             setTimeout(function () { isCDBrooch = false; }, event.cooldown * 1000);
         }
@@ -100,7 +100,7 @@ var LEIN_DELAY = cdwn.list[0].cdw,                           // How much time in
             message('Skill info: (group: ' + sInfo.group + ' / job: ' + oJob + ')');
             getInfoCommand = false;
         }
-		const brooch = dispatch.game.inventory.slots[20];
+		const brooch = dispatch.game.inventory.equipment.slots[20];
 		if(brooch) {
 			for (let s = 0; s < skills.length; s++) {
             if (skills[s].group == sInfo.group && skills[s].job == oJob) { // compares skills file with sInfo struct
@@ -110,6 +110,7 @@ var LEIN_DELAY = cdwn.list[0].cdw,                           // How much time in
             }
           }
 		}
+		else command.message("Equip Brooch MOFO");
     });
 	
     function Brooch(bID) { // Brooch Item Data
