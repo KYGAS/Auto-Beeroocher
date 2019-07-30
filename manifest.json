@@ -3,6 +3,9 @@
     "index.js": "525ab1172638c08221015e42b8ecf9bf5d7587720c574f240ab02f69cddb0f41",
     "module.json": "f590d605c9e07b84cef147ceee988b1da57185441289b23a2835dcb18fa09ebf",
     "README.md": "4dc53e280b41148893f3eaff1c35c85371d1c52bace87b1b509a978dd3dcc6ce",
-    "skills.js": "c90362f1c201987c7975e1f4927f1c77a6ba6d9f3fe4d4a6af820c630f04e8a3"
+    "skills.js": {
+            "overwrite": false,
+            "hash": "c90362f1c201987c7975e1f4927f1c77a6ba6d9f3fe4d4a6af820c630f04e8a3"
+     }
   }
 }
