@@ -69,9 +69,9 @@ var LEIN_DELAY = cdwn.list[0].cdw,                           // How much time in
     	}
 	});
 	
-    dispatch.hook('S_LOGIN', 13, (event) => {
-        oCid = event.gameId;
-        oJob = (event.templateId - 10101) % 100;
+    dispatch.hook('S_LOGIN', 'raw', { order : Infinity }, (event) => {
+        oCid = dispatch.game.me.gameId;
+        oJob = (dispatch.game.me.templateId - 10101) % 100;
     });
 	
     dispatch.hook('C_PLAYER_LOCATION', 5, { order: -10 }, (event) => {
